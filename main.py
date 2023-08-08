@@ -19,3 +19,22 @@ app = FastAPI()
 async def greeting():
     return {'message': 'Hello!'}
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/greeting')
+def greeting():
+    return 'Hello!'
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/greeting')
+def greeting():
+    return 'Hello!'
+
+@app.get('/odd_numbers')
+def get_odd_numbers(numbers: List[int]):
+    odd_numbers = [num for num in numbers if num % 2 != 0]
+    return odd_numbers
