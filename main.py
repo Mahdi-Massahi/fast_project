@@ -7,4 +7,8 @@ app = FastAPI()
 def greeting():
     return 'Hello!'
 
+@app.get('/sum/{num1}/{num2}')
+def calculate_sum(num1: int, num2: int):
+    return {'result': num1 + num2}
+
 
